@@ -15,16 +15,28 @@
  */
 
 buildscript {
+    ext.wrapperDistrubutionUrlPrefix = 'https://services.gradle.org/distributions'
+
     repositories {
+        google()
+        mavenCentral()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.2'
+        classpath 'com.android.tools.build:gradle:3.4.2'
     }
+}
+
+wrapper {
+    gradleVersion = "5.5.1"
+    distributionType = Wrapper.DistributionType.ALL
+    distributionUrl = "${wrapperDistrubutionUrlPrefix}/gradle-${gradleVersion}-${distributionType.name().toLowerCase()}.zip"
 }
 
 allprojects {
     repositories {
+        google()
+        mavenCentral()
         jcenter()
     }
 }
