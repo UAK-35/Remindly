@@ -258,7 +258,8 @@ public class ReminderEditActivity extends AppCompatActivity implements
 
     // Obtain time from time picker
     @Override
-    public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute) {
+    //public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute) {
+    public void onTimeSet(TimePickerDialog view, int hourOfDay, int minute, int second) {
         mHour = hourOfDay;
         mMinute = minute;
         if (minute < 10) {
